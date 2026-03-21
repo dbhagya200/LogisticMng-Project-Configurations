@@ -1,0 +1,36 @@
+spring:
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: order-service
+              uri: lb://ORDER-SERVICE
+              predicates:
+                - Path=/api/v1/job-orders/**
+
+            - id: customer-service
+              uri: lb://CUSTOMER-SERVICE
+              predicates:
+                - Path=/api/v1/customers/**
+
+          default-filters:
+            - PreserveHostHeader
+
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOrigins: "*"
+                allowed-methods: "*"
+                allowed-headers: "*"
+server:
+  port: 7000
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: false
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
