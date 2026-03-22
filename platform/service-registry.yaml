@@ -2,11 +2,8 @@ server:
   port: 9001
 
 eureka:
-  instance:
-    hostname: localhost
-    prefer-ip-address: false
   client:
     registerWithEureka: false
     fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://localhost:9001/eureka/
+#    serviceUrl:
+#      defaultZone: http://localhost:9001/eureka/
