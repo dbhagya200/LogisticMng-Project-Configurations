@@ -8,11 +8,13 @@ spring:
             - id: order-service
               uri: lb://ORDER-SERVICE
               predicates:
-                - Path=/api/v1/job-orders/**
+                - Path=/api/v1/job
+                - Path=/api/v1/job/**
 
             - id: customer-service
               uri: lb://CUSTOMER-SERVICE
               predicates:
+                - Path=/api/v1/customers
                 - Path=/api/v1/customers/**
 
           default-filters:
