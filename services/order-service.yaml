@@ -5,6 +5,7 @@ spring:
 
   data:
     mongodb:
+      url: mongodb://root:PKxApOO7dAg6SddEGxbjdKJx62V-VxxFWKjgo7Cdv1yygVsS@12f1c777-cf7c-45fb-9cdf-479d15d2ff10.asia-southeast1.firestore.goog:443/mongodb-db-job-order?loadBalanced=true&tls=true&authMechanism=SCRAM-SHA-256&retryWrites=false
       host: localhost
       port: 13500
       database: logistic
