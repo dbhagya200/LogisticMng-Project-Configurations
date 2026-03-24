@@ -18,6 +18,12 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 #        format_sql: true
 
+servlet:
+  multipart:
+    enabled: true
+    max-file-size: 5MB
+    max-request-size: 10MB
+
 server:
   port: 0
   forward-headers-strategy: framework

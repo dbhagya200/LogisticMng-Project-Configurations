@@ -26,13 +26,27 @@ spring:
                 allowedOrigins: "*"
                 allowed-methods: "*"
                 allowed-headers: "*"
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.loadbalancer: DEBUG
+
 server:
   port: 7000
 
-eureka:
-  instance:
-    hostname: localhost
-    prefer-ip-address: false
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:9001/eureka/
+management:
+  endpoint:
+    gateway:
+      access: unrestricted
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+
+#eureka:
+#  instance:
+#    hostname: localhost
+#    prefer-ip-address: false
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:9001/eureka/
