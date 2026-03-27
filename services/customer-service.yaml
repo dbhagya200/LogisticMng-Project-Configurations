@@ -3,21 +3,21 @@ spring:
     problemdetails:
       enabled: true
 
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/logistic
-#    username: postgres
-#    password: psql
-#    driver-class-name: org.postgresql.Driver
-
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/logistic
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:psql}
+    url: jdbc:postgresql://localhost:5432/logistic
+    username: postgres
+    password: psql
     driver-class-name: org.postgresql.Driver
-    hikari:
-      connection-timeout: 30000
-      maximum-pool-size: 10
-      minimum-idle: 5
+
+#  datasource:
+#    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/logistic
+#    username: ${DB_USERNAME:postgres}
+#    password: ${DB_PASSWORD:psql}
+#    driver-class-name: org.postgresql.Driver
+#    hikari:
+#      connection-timeout: 30000
+#      maximum-pool-size: 10
+#      minimum-idle: 5
 
   jpa:
     hibernate:
@@ -35,7 +35,7 @@ servlet:
     max-request-size: 10MB
 
 server:
-  port: 8001
+  port: 0
   forward-headers-strategy: framework
 
 eureka:
